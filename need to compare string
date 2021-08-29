@@ -3,7 +3,7 @@ discuss==>https://leetcode.com/problems/find-the-kth-largest-integer-in-the-arra
 discuss==>https://leetcode.com/problems/find-the-kth-largest-integer-in-the-array/discuss/1431813/C%2B%2B-or-Simple-or-Explained-with-Diagram
 
 
-
+//first approach by sorting in descending 
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -25,6 +25,38 @@ public:
         
         sort(nums.begin(),nums.end(),compare);
         return nums[k-1];
+        
+    }
+};
+
+
+
+
+
+// second approach by sorting in ascending order
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+ bool compare(string &a,string &b){
+     int na=a.size(),nb=b.size();
+     if(na==nb){
+         for(int i=0;i<na;i++){
+             if(a[i]>b[i])return false;
+             if(b[i]>a[i])return true;
+         }
+     }
+     return a.size()<b.size();
+ }
+
+class Solution {
+public:
+    string kthLargestNumber(vector<string>& nums, int k) {
+        
+        sort(nums.begin(),nums.end(),compare);
+        int n=nums.size();
+        return nums[n-k];
         
     }
 };
