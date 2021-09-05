@@ -2,6 +2,8 @@ question==>https://leetcode.com/contest/weekly-contest-257/problems/the-number-o
 
 solution==>https://leetcode.com/submissions/detail/549994040/
 
+explation==>https://leetcode.com/problems/the-number-of-weak-characters-in-the-game/discuss/1445186/EASY-C%2B%2B-solution-with-great-explanation-and-comments-(nlogn)-sorting
+
 class Solution {
 public:
     
