@@ -1,0 +1,26 @@
+question==>https://leetcode.com/contest/weekly-contest-257/problems/the-number-of-weak-characters-in-the-game/
+
+solution==>https://leetcode.com/submissions/detail/549994040/
+
+class Solution {
+public:
+    
+   static bool comp(vector<int>&a,vector<int>&b){
+        if(a[0]==b[0]){
+            return a[1]>b[1];
+        }
+        return a[0]<b[0];
+    }
+    int numberOfWeakCharacters(vector<vector<int>>& properties) {
+        sort(properties.begin(),properties.end(),comp);
+        int n=properties.size();
+        int i,ans=0,maxi=INT_MIN;
+        for(i=n-1;i>=0;i--){
+            if(properties[i][1]<maxi){
+                ans++;
+            }
+            maxi=max(maxi,properties[i][1]);
+        }
+        return ans;
+    }
+};
